@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-<<<<<<< HEAD
 import 'package:tharad_task/core/logic/helper_methods.dart';
 import 'package:tharad_task/core/ui/app_images.dart';
 import 'package:tharad_task/views/auth/register.dart';
 import 'package:tharad_task/views/home/views.dart';
-=======
-import 'package:tharad_task/core/ui/app_images.dart';
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
 import '../../core/ui/app_buttom.dart';
 import '../../core/ui/app_check.dart';
 import '../../core/ui/app_input.dart';
@@ -41,20 +37,15 @@ class LoginView extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 SizedBox(height: 6.h),
-<<<<<<< HEAD
                 AppInput(
                   text: 'Tharad@gmail.com',
                   keyboardType: TextInputType.emailAddress,
                 ),
-=======
-                AppInput(text: 'Tharad@gmail.com',keyboardType: TextInputType.emailAddress,),
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                 Text(
                   'كلمة المرور',
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 SizedBox(height: 6.h),
-<<<<<<< HEAD
                 AppInput(
                   text: '********',
                   isPassword: true,
@@ -76,13 +67,6 @@ class LoginView extends StatelessWidget {
                     goTo(canPop: false, RegisterView());
                   },
                 ),
-=======
-                AppInput(text: '********',isPassword: true,keyboardType: TextInputType.text,),
-                AppCheck(),
-                SizedBox(height: 40.h),
-                AppButtom(text: 'تسجيل الدخول',),
-                AppLoginOrRegister(text: 'ليس لديك حساب؟',title:'إنشاء حساب جديد',),
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
               ],
             ),
           ),

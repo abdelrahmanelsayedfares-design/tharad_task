@@ -71,7 +71,6 @@ class VerifyCodeView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-<<<<<<< HEAD
                     Text(
                       '00:59 Sec',
                       style: TextStyle(
@@ -90,10 +89,6 @@ class VerifyCodeView extends StatelessWidget {
                               color: Color(0xff0D1D1E)
                           ),
                         ),
-=======
-                    Row(
-                      children: [
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                         TextButton(
                           onPressed: () {},
                           child: Text(
@@ -105,38 +100,12 @@ class VerifyCodeView extends StatelessWidget {
                             ),
                           ),
                         ),
-<<<<<<< HEAD
                       ],
                     ),
                   ],
                 ),
                 SizedBox(height: 40.h,),
                 AppButtom(text: 'المتابعة',width: 350.w,ontap:(){})
-=======
-                        Text(
-                          'لم يصلك رمز ؟',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w400,
-                              color: Color(0xff0D1D1E)
-                          ),
-                        ),
-
-                      ],
-                    ),
-                    Text(
-                      '00:59 Sec',
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xff998C8C),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 40.h,),
-                AppButtom(text: 'المتابعة',)
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
               ],
             ),
           ),

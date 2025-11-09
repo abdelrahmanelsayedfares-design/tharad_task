@@ -7,11 +7,7 @@ class AppCheck extends StatefulWidget {
   State<AppCheck> createState() => _AppCheckState();
 }
 
-<<<<<<< HEAD
 bool check = false;
-=======
-bool rememberMe = false;
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
 
 class _AppCheckState extends State<AppCheck> {
   @override
@@ -22,7 +18,6 @@ class _AppCheckState extends State<AppCheck> {
         Row(
           children: [
             Checkbox(
-<<<<<<< HEAD
               checkColor: Colors.white,
               activeColor: Colors.green,
               side: BorderSide(color: const Color(0xFF0D1D1E), width: 1.5),
@@ -30,13 +25,6 @@ class _AppCheckState extends State<AppCheck> {
               onChanged: (val) {
                 setState(() {
                   check = val ?? false;
-=======
-              activeColor: const Color(0xFF0D8A6F),
-              value: rememberMe,
-              onChanged: (val) {
-                setState(() {
-                  rememberMe = val ?? false;
->>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                 });
               },
             ),
