@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+<<<<<<< HEAD
 import 'package:tharad_task/core/logic/helper_methods.dart';
 import 'package:tharad_task/core/ui/app_images.dart';
 import 'package:tharad_task/views/auth/login.dart';
 import 'package:tharad_task/views/auth/verify_vode.dart';
+=======
+import 'package:tharad_task/core/ui/app_images.dart';
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
 import '../../core/ui/app_buttom.dart';
 import '../../core/ui/app_image_picker.dart';
 import '../../core/ui/app_input.dart';
@@ -56,31 +60,44 @@ class RegisterView extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   SizedBox(height: 6.h),
+<<<<<<< HEAD
                   AppInput(text: 'thar22', keyboardType: TextInputType.name),
+=======
+                  AppInput(text: 'thar22',keyboardType: TextInputType.name,),
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                   Text(
                     'البريد الإلكتروني',
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   SizedBox(height: 6.h),
+<<<<<<< HEAD
                   AppInput(
                     text: 'Tharad@gmail.com',
                     keyboardType: TextInputType.emailAddress,
                   ),
+=======
+                  AppInput(text: 'Tharad@gmail.com',keyboardType: TextInputType.emailAddress,),
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                   Text(
                     'كلمة المرور',
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   SizedBox(height: 6.h),
+<<<<<<< HEAD
                   AppInput(
                     text: '********',
                     isPassword: true,
                     keyboardType: TextInputType.text,
                   ),
+=======
+                  AppInput(text: '********', isPassword: true,keyboardType: TextInputType.text,),
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                   Text(
                     'تأكيد كلمة المرور',
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   SizedBox(height: 6.h),
+<<<<<<< HEAD
                   AppInput(
                     text: '********',
                     isPassword: true,
@@ -102,6 +119,13 @@ class RegisterView extends StatelessWidget {
                      goTo(canPop: false,LoginView());
                     },
                   ),
+=======
+                  AppInput(text: '********', isPassword: true,keyboardType: TextInputType.text,),
+                  SizedBox(height: 40),
+                  AppButtom(text: 'إنشاء حساب جديد'),
+                  SizedBox(height: 12.h),
+                  AppLoginOrRegister(text: 'لديك حساب؟', title: ' تسجيل الدخول'),
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
                 ],
               ),
             ),

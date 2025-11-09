@@ -3,16 +3,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButtom extends StatelessWidget {
   final String text;
+<<<<<<< HEAD
   final Function() ontap;
   final double width;
   const AppButtom({super.key, required this.text, required this.ontap, required this.width,});
+=======
+  const AppButtom({super.key, required this.text});
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
 
   @override
   Widget build(BuildContext context) {
     return    InkWell(
+<<<<<<< HEAD
       onTap: ontap,
       child: Container(
         width: width,
+=======
+      onTap: (){},
+      child: Container(
+        width: 350.w,
+>>>>>>> a01036d574baf110a47ab371cf294102041c9ba7
         height: 48.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
