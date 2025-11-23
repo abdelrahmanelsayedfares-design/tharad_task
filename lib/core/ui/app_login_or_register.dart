@@ -28,6 +28,7 @@ class AppLoginOrRegister extends StatelessWidget {
               color: Color(0xff42867B),
               fontSize: 12,
               fontWeight: FontWeight.w400,
+              decoration: TextDecoration.underline,
             ),
           ),
 

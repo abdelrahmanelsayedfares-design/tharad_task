@@ -1,9 +1,11 @@
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:tharad_task/core/logic/helper_methods.dart';
 import 'package:tharad_task/core/ui/app_images.dart';
-
 import '../../core/ui/app_buttom.dart';
+import '../home/home.dart';
 
 class VerifyCodeView extends StatelessWidget {
   const VerifyCodeView({super.key});
@@ -71,41 +73,66 @@ class VerifyCodeView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    CircularCountDownTimer(
+                      width: 0,
+                      height: 0,
+                      duration: 90,
+                      fillColor: Colors.transparent,
+                      ringColor: Colors.transparent,
+                      // strokeWidth: 0,
+                      // isTimerTextShown: false,
+                      isReverse: true,
+                    ),
+                    StreamBuilder<int>(
+                      stream: Stream.periodic(
+                        const Duration(seconds: 1),
+                        (i) => i,
+                      ).take(61),
+                      builder: (context, snapshot) {
+                        int remaining = 60 - (snapshot.data ?? 0);
+                        String formatted =
+                            "0:${remaining.toString().padLeft(2, '0')}";
+                        return Text(
+                          formatted,
+                             style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff998C8C),
+                            ),
+                        );
+                      },
+                    ),
+                    Spacer(),
                     Text(
-                      '00:59 Sec',
+                      'لم يصلك رمز؟',
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xff998C8C),
+                        color: Color(0xff0D1D1E),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          'لم يصلك رمز ؟',
-                          style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xff0D1D1E)
-                          ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'إعادة ارسال',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff42867B),
+                          decoration: TextDecoration.underline,
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'إعادة ارسال',
-                            style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff42867B)
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 40.h,),
-                AppButtom(text: 'المتابعة',width: 350.w,ontap:(){})
+                SizedBox(height: 40.h),
+                AppButtom(
+                  text: 'المتابعة',
+                  width: 350.w,
+                  ontap: () {
+                    goTo(canPop: false, HomeProfileViews());
+                  },
+                ),
               ],
             ),
           ),

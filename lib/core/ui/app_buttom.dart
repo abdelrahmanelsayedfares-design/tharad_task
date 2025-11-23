@@ -5,24 +5,29 @@ class AppButtom extends StatelessWidget {
   final String text;
   final Function() ontap;
   final double width;
-  const AppButtom({super.key, required this.text, required this.ontap, required this.width,});
+  const AppButtom({
+    super.key,
+    required this.text,
+    required this.ontap,
+    required this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return    InkWell(
+    return InkWell(
       onTap: ontap,
       child: Container(
         width: width,
         height: 48.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ Color(0xFF5CC7A3),Color(0xFF265355)],
+            colors: [Color(0xFF5CC7A3), Color(0xFF265355)],
           ),
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: Center(
           child: Text(
-           text,
+            text,
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tharad_task/core/logic/helper_methods.dart';
 import 'package:tharad_task/core/ui/app_images.dart';
 import 'package:tharad_task/views/auth/register.dart';
-import 'package:tharad_task/views/home/views.dart';
+import 'package:tharad_task/views/home/home.dart';
 import '../../core/ui/app_buttom.dart';
 import '../../core/ui/app_check.dart';
 import '../../core/ui/app_input.dart';
@@ -57,7 +57,7 @@ class LoginView extends StatelessWidget {
                   width: 350.w,
                   text: 'تسجيل الدخول',
                   ontap: () {
-                    goTo(canPop: false, HomeView());
+                    goTo(canPop: false, HomeProfileViews());
                   },
                 ),
                 AppLoginOrRegister(

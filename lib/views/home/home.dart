@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tharad_task/core/logic/helper_methods.dart';
 import 'package:tharad_task/core/ui/app_images.dart';
 import '../../core/ui/app_buttom.dart';
 import '../../core/ui/app_image_picker.dart';
 import '../../core/ui/app_input.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomeProfileViews extends StatelessWidget {
+  const HomeProfileViews({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF5CC7A3),
+      backgroundColor: const Color(0xFF265355),
       appBar: AppBar(
         toolbarHeight: 112,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [Color(0xFF5CC7A3), Color(0xFF265355)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
           ),
         ),
@@ -99,7 +102,42 @@ class HomeView extends StatelessWidget {
                   isPassword: true,
                 ),
                 SizedBox(height: 54.h),
-                Center(child: AppButtom(text: 'حفظ التغيرات',width: 234.w,ontap:(){})),
+                Center(
+                  child: AppButtom(
+                    text: 'حفظ التغيرات',
+                    width: 234.w,
+                    ontap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          Future.delayed(const Duration(seconds: 2), () {
+                            Navigator.pop(context);
+                          }
+                          );
+                          return Container(
+                            height: 65.h,
+                            width: double.infinity,
+                            color: Color(0xff42867B),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 25,
+                              ),
+                              child: Text(
+                                'تم حفظ التغيرات بنجاح',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xffFFFFFF),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
                 SizedBox(height: 10.h),
                 Center(
                   child: TextButton(
@@ -110,6 +148,7 @@ class HomeView extends StatelessWidget {
                         color: Color(0xffFF1020),
                         fontWeight: FontWeight.w500,
                         fontSize: 12.sp,
+                        decoration: TextDecoration.underline,
                       ),
                     ),
                   ),

@@ -32,33 +32,27 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _pickImage,
-      child: DottedBorder(
-        color: const Color(0xFF42867B),
-        strokeWidth: 1,
-        dashPattern: const [10, 10],
-        borderType: BorderType.RRect,
-        radius: const Radius.circular(8),
-        child: Container(
-          width: 350.w,
-          height: 87.h,
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: const Color(0xFFF4F7F6),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: _selectedImage == null
-              ? Directionality(
+      child: _selectedImage == null
+          ? DottedBorder(
+              color: const Color(0xFF42867B),
+              strokeWidth: 1,
+              dashPattern: const [10, 10],
+              borderType: BorderType.RRect,
+              radius: const Radius.circular(8),
+              child: Container(
+                width: 350.w,
+                height: 87.h,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF4F7F6),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Directionality(
                   textDirection: TextDirection.rtl,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Center(
-                        child: AppImage(
-                          image: 'camera.svg',
-                          width: 24,
-                          height: 24,
-                        ),
-                      ),
+                      AppImage(image: 'camera.svg', width: 24, height: 24),
                       const SizedBox(height: 5),
                       Text.rich(
                         TextSpan(
@@ -67,7 +61,10 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
                               text: 'الملفات المسموح بيها :  JPEG , PNG\n',
                               style: TextStyle(fontSize: 8),
                             ),
-                            TextSpan(text: 'الحد الأقصى : 5MB',style: TextStyle(fontSize: 6,),),
+                            TextSpan(
+                              text: 'الحد الأقصى : 5MB',
+                              style: TextStyle(fontSize: 6),
+                            ),
                           ],
                         ),
                         style: TextStyle(
@@ -78,18 +75,52 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
                       ),
                     ],
                   ),
-                )
-              : ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.file(
-                    File(_selectedImage!.path),
-                    fit: BoxFit.cover,
-                    width: 350,
-                    height: 110,
+                ),
+              ),
+            )
+          : ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Stack(
+          children: [
+            Container(
+              color: Color(0xffF4F7F6),
+              width: 170.w,
+              height: 90.h,
+              child: Image.file(
+                File(_selectedImage!.path),
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.contain,
+              ),
+            ),
+            Positioned(
+              top: 6.h,
+              left: 6.w,
+              child: GestureDetector(
+                onTap: _pickImage,
+                child: Container(
+                  height: 18.h,
+                  width: 18.w,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff42867B),
+                    borderRadius: BorderRadius.circular(75),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: AppImage(
+                      image: 'camera.svg',
+                      color: Colors.white,
+                      width: 12.w,
+                      height: 12.h,
+                    ),
                   ),
                 ),
+              ),
+            ),
+          ],
         ),
-      ),
+      )
+
     );
   }
 }

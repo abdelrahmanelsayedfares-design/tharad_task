@@ -91,7 +91,7 @@ class RegisterView extends StatelessWidget {
                     width: 350.w,
                     text: 'إنشاء حساب جديد',
                     ontap: () {
-                      goTo(canPop: false, VerifyCodeView());
+                      goTo(canPop: true, VerifyCodeView());
                     },
                   ),
                   SizedBox(height: 12.h),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad_task/views/auth/login.dart' show LoginView;
+import 'package:tharad_task/views/auth/login.dart' ;
 import 'package:tharad_task/views/auth/register.dart';
-import 'package:tharad_task/views/home/views.dart';
+import 'package:tharad_task/views/home/home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/logic/helper_methods.dart';
 
@@ -30,6 +30,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.zero
+              )
+            ),
             inputDecorationTheme: InputDecorationTheme(
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Color(0xffF0E6DE)),

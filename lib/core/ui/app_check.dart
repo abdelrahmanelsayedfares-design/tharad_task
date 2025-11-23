@@ -38,7 +38,11 @@ class _AppCheckState extends State<AppCheck> {
           onPressed: () {},
           child: Text(
             'هل نسيت كلمة المرور؟',
-            style: TextStyle(fontSize: 10, color: Color(0xff42867B)),
+            style: TextStyle(
+              fontSize: 10,
+              color: Color(0xff42867B),
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],
