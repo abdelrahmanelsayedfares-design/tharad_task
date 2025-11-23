@@ -79,48 +79,47 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
               ),
             )
           : ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: Stack(
-          children: [
-            Container(
-              color: Color(0xffF4F7F6),
-              width: 170.w,
-              height: 90.h,
-              child: Image.file(
-                File(_selectedImage!.path),
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.contain,
-              ),
-            ),
-            Positioned(
-              top: 6.h,
-              left: 6.w,
-              child: GestureDetector(
-                onTap: _pickImage,
-                child: Container(
-                  height: 18.h,
-                  width: 18.w,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff42867B),
-                    borderRadius: BorderRadius.circular(75),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: AppImage(
-                      image: 'camera.svg',
-                      color: Colors.white,
-                      width: 12.w,
-                      height: 12.h,
+              borderRadius: BorderRadius.circular(8),
+              child: Stack(
+                children: [
+                  Container(
+                    color: Color(0xffF4F7F6),
+                    width: 170.w,
+                    height: 90.h,
+                    child: Image.file(
+                      File(_selectedImage!.path),
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.contain,
                     ),
                   ),
-                ),
+                  Positioned(
+                    top: 6.h,
+                    left: 6.w,
+                    child: GestureDetector(
+                      onTap: _pickImage,
+                      child: Container(
+                        height: 18.h,
+                        width: 18.w,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff42867B),
+                          borderRadius: BorderRadius.circular(75),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: AppImage(
+                            image: 'camera.svg',
+                            color: Colors.white,
+                            width: 12.w,
+                            height: 12.h,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      )
-
     );
   }
 }
